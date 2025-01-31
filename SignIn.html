@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <!-- Link to Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .contact {
+      width: 100%;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1a1a1a, #333);
+      color: white;
+      text-align: center;
+      box-sizing: border-box;
+      flex-grow: 1;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .contact .main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Left Section Styles */
+    .contact .left {
+      width: 320px;
+      padding: 40px;
+      background-color: #2e2e2e;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact .left:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: scale(1.02);
+    }
+
+    .contact .form-control {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .contact .form-control input,
+    .contact .form-control textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      background-color: #444;
+      color: white;
+      font-size: 16px;
+      border: 1px solid #555;
+      transition: border 0.3s ease;
+    }
+
+    .contact .form-control input:focus,
+    .contact .form-control textarea:focus {
+      border: 1px solid #28a745;
+      outline: none;
+    }
+
+    .contact button {
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 8px;
+      background-color: #28a745;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .contact button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    /* Right Section Styles */
+    .contact .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .contact .right h3,
+    .contact .right h4 {
+      margin-top: 10px;
+      font-size: 24px;
+      color: #f0f0f0;
+      font-weight: normal;
+    }
+
+    .contact .social-media {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .contact .social-media ul {
+      display: flex;
+      gap: 15px;
+    }
+
+    .contact .social-media li {
+      width: 50px;
+      height: 50px;
+      background-color: #007bff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact .social-media li:hover {
+      background-color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    .contact .social-media li a {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .contact .social-media li:hover a {
+      color: #333;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact .main {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact .left {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .contact .right {
+        width: 80%;
+      }
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="google_translate_element"></div>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="main">
+      <!-- Left Section: Contact Form -->
+      <div class="left">
+        <form action="https://formspree.io/f/xbljgdeq" method="POST">
+          <div class="form-control">
+            <input type="text" placeholder="Your Name" name="name" required />
+          </div>
+          <div class="form-control">
+            <input type="tel" placeholder="Phone Number" name="phoneno" required />
+          </div>
+          <div class="form-control">
+            <textarea placeholder="Write Message" name="message" required></textarea>
+          </div>
+          <button class="btn">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Right Section: Social Media & Info -->
+      <div class="right">
+        <h3>Follow Us</h3>
+        <h4>Stay connected on social media</h4>
+        <div class="social-media">
+          <ul>
+            <li><a href="https://www.facebook.com/" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="https://github.com/kumarrishuraj" target="_blank"><i
+                        class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/invites/contact/?igsh=kxz6mn4d3s89&utm_content=paj744i" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/rishuraj-kumar-350ba6319" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Your Company. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,kn,fr,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+</body>
+</html>

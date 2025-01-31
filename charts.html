@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollution Awareness</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #16a085;
+        }
+
+        main {
+            width: 80%;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 500px;
+            margin-bottom: 40px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-links a {
+            font-size: 1.1rem;
+            color: #16a085;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .news-links a:hover {
+            color: #2980b9;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pollution Awareness</h1>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="data.html">State-wise Data</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+    <div id="google_translate_element"></div>
+
+    <main>
+        <h2>Pollution Levels by State</h2>
+        <div class="chart-container">
+            <canvas id="pollutionChart"></canvas>
+        </div>
+
+        <h2>What is Air Pollution?</h2>
+        <p>Air pollution occurs when harmful substances, such as dust, pollen, soot, smoke, and liquid droplets, are introduced into Earth's atmosphere. It poses serious health risks, particularly to vulnerable groups like children, elderly individuals, and those with pre-existing health conditions. The primary contributors to air pollution include transportation, industrial activities, deforestation, and agriculture.</p>
+
+        <h2>Effects of Air Pollution</h2>
+        <p>Exposure to polluted air can have immediate and long-term effects on health. Short-term exposure can cause eye irritation, coughing, and aggravated asthma, while long-term exposure can increase the risk of heart disease, respiratory illnesses, and even premature death.</p>
+
+        <h3>Steps to Reduce Air Pollution</h3>
+        <ul>
+            <li>Reduce the use of fossil fuels by adopting renewable energy sources.</li>
+            <li>Encourage the use of public transportation and electric vehicles.</li>
+            <li>Promote sustainable farming practices and reduce deforestation.</li>
+            <li>Advocate for stronger government policies and regulations on industrial emissions.</li>
+            <li>Increase awareness about the importance of air quality in public health.</li>
+        </ul>
+
+        <h3>Latest News on Air Pollution in India</h3>
+        <p>Recent reports indicate that air pollution levels in Delhi have reached hazardous levels post-Diwali celebrations, with the Air Quality Index (AQI) crossing 500. This has led to severe health concerns for residents, with many experiencing respiratory issues. The government has implemented measures such as work-from-home mandates and school closures to combat the pollution.</p>
+
+        <h3>State-wise News Links:</h3>
+        <ul class="news-links">
+            <li><a href="https://www.indiatoday.in/livetv">India Today Live TV</a></li>
+            <li><a href="https://www.indiatvnews.com/livetv">India TV Live TV</a></li>
+            <li><a href="https://zeenews.india.com/live-tv">Zee News Live TV</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pollution Awareness. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        var ctx = document.getElementById('pollutionChart').getContext('2d');
+        var pollutionChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Delhi', 'Uttar Pradesh', 'Bihar', 'Haryana', 'Punjab', 'Maharashtra', 'West Bengal', 'Rajasthan', 'Tamil Nadu', 'Gujarat', 'Karnataka', 'Andhra Pradesh', 'Telangana', 'Kerala', 'Odisha', 'Jharkhand', 'Assam', 'Uttarakhand', 'Himachal Pradesh', 'Jammu & Kashmir', 'Chhattisgarh', 'Madhya Pradesh', 'Goa', 'Puducherry', 'Andaman & Nicobar Islands', 'Lakshadweep', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Tripura', 'Arunachal Pradesh'],
+                datasets: [{
+                    label: 'Average PM2.5 (µg/m³)',
+                    data: [150, 120, 110, 100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5],
+                    backgroundColor: 'rgba(46, 204, 113, 0.6)',
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,kn,fr,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
